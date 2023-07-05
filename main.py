@@ -41,7 +41,7 @@ for i in range(presents_size):
     id1 = canvas.create_oval(x*snake_item,y*snake_item, x*snake_item+snake_item,y*snake_item+snake_item,fill=present_color2)
     id2 = canvas.create_oval(x*snake_item+2,y*snake_item+2,x*snake_item+snake_item-2,y*snake_item+snake_item-2,fill=present_color1)
     presents_list.append([x, y, id1, id2])
-    presents_list.appen, ([x, y, id1, id2])
+
 
 def snake_paint_item(canvas, x, y):
     global snake_list
