@@ -3,6 +3,8 @@ from tkinter import *
 import time
 import random
 
+Game_Running = True
+
 game_width = 500
 game_height = 500
 snake_item = 20
@@ -107,13 +109,16 @@ canvas.bind_all("<KeyPress-Right>", snake_move)
 canvas.bind_all("<KeyPress-Up>", snake_move)
 canvas.bind_all("<KeyPress-Down>", snake_move)
 
+def game_over():
+    global Game_Running
+    Game_Running = False
 
 def check_if_borders():
     if snake_x > virtual_game_x or snake_x < 0 or snake_y > virtual_game_y or snake_y < 0:
         game_over()
 
 
-while 1:
+while Game_Running:
     check_can_we_delete_snake_item()
     check_if_we_found_present()
     check_if_borders()
